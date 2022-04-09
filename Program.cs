@@ -33,7 +33,6 @@ namespace Massiv5
             int numberRepeatTemp = 0;
             int numberRepeatCountTemp = startingPosition;
 
-
             for (int i = 0; i < array.Length; i++)
             {
                 if(i==array.Length-1)
