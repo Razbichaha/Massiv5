@@ -12,7 +12,6 @@ namespace Massiv5
             int maximumArrayLength = 30;
 
             int[] array = new int[maximumArrayLength];
-           // int[] array = {1,2,3,3,4,5,5,5,5,6};
             int lastElement = array.Length - 1;
 
             for (int i = 0; i < array.Length; i++)
