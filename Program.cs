@@ -31,7 +31,6 @@ namespace Massiv5
             int numberRepeatCount = 1;
             bool isRepeatTask = false;
             int startingPosition = 1;
-
             int numberRepeatTemp = 0;
             int numberRepeatCountTemp = startingPosition;
 
