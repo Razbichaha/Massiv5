@@ -11,24 +11,24 @@ namespace Massiv5
             int maximumValue = 30;
             int maximumArrayLength = 30;
 
-            int[] array = new int[maximumArrayLength];
+           // int[] array = new int[maximumArrayLength];
+            int[] array = {1,2,3,3,4,5,5,5,5,6};
             int lastElement = array.Length - 1;
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = random.Next(minimumValue, maximumValue);
-            }
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    array[i] = random.Next(minimumValue, maximumValue);
+            //}
 
-            foreach (int i in array)
+            foreach (int number in array)
             {
-                Console.Write(i + " ");
+                Console.Write(number + " ");
             }
 
             Console.Write("\n");
 
             int numberRepeat = 0;
             int numberRepeatCount = 1;
-            bool isRepeatNumbers = false;
             bool isRepeatTask = false;
             int startingPosition = 1;
 
@@ -36,29 +36,31 @@ namespace Massiv5
             int numberRepeatCountTemp = startingPosition;
 
 
-            for (int i = 0; i < array.Length-1; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-
-                if(array[i]==array[i+1])
+                if(i==array.Length-1)
+                {
+                    if (numberRepeatCountTemp > numberRepeatCount)
+                    {
+                        numberRepeat = array[i];
+                        numberRepeatCount = numberRepeatCountTemp;
+                    }
+                }
+                else if(array[i]==array[i+1])
                 {
                     numberRepeatTemp = array[i];
                     numberRepeatCountTemp++;
-                    isRepeatNumbers = true;
                     isRepeatTask = true;
                 }
                 else
                 {
-                    if(isRepeatNumbers==true)
+                    if (numberRepeatCountTemp > numberRepeatCount)
                     {
-                       if(numberRepeatCountTemp> numberRepeatCount)
-                        {
-                            numberRepeat = array[i];
-                            numberRepeatCount = numberRepeatCountTemp;
-                        }
-
-                      numberRepeatCountTemp = startingPosition;
-                      isRepeatNumbers = false;
+                        numberRepeat = array[i];
+                        numberRepeatCount = numberRepeatCountTemp;
                     }
+
+                    numberRepeatCountTemp = startingPosition;
                 }
             }
 
